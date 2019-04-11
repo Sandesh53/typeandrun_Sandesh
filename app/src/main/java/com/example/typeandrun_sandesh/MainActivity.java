@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!validate()){
+                    return;
+                }
+
 
                 output_sandesh.setMake(etmake.getText().toString());
                 output_sandesh.setYear(Integer.parseInt(etYear.getText().toString()));
@@ -55,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
     private boolean validate() {
         if(TextUtils.isEmpty(etmake.getText().toString())){
             etmake.setError("please enter manufacturer");
@@ -63,22 +66,22 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         if(TextUtils.isEmpty(etYear.getText().toString())){
-            etYear.setError("please enter Year of purchase");
+            etYear.setError("Enter Year of purchase");
             etYear.requestFocus();
             return false;
         }
         if(TextUtils.isEmpty(etColor.getText().toString())){
-            etColor.setError("please enter Color");
+            etColor.setError(" Enter Color");
             etColor.requestFocus();
             return false;
         }
         if(TextUtils.isEmpty(etPrice.getText().toString())){
-            etPrice.setError("please enter Price");
+            etPrice.setError("Enter Price");
             etPrice.requestFocus();
             return false;
         }
         if(TextUtils.isEmpty(etEngineSize.getText().toString())){
-            etEngineSize.setError("please enter manufacturer");
+            etEngineSize.setError("Enter the engine size");
             etEngineSize.requestFocus();
             return false;
         }
@@ -86,3 +89,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
+
